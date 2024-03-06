@@ -1,0 +1,288 @@
+@import url(/reset.css);
+
+
+body {
+    overflow-x: hidden;
+}
+
+figure {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+}
+
+video {
+    width: 100%;
+    min-width: 1800px;
+}
+
+header {
+    position: fixed;
+    z-index: 10;
+    width: 600px;
+    height: 100%;
+    left: -400px;
+    transform: skew(-40deg);
+    background: rgb(107, 107, 107);
+    background: linear-gradient(-90deg, rgba(107, 107, 107, 0.48503151260504207) 0%, rgba(0, 0, 0, 0.6951155462184874) 100%);
+}
+
+h1 img {
+    width: 80%;
+}
+
+h1 {
+    transform: skew(40deg);
+    position: absolute;
+    left: 250px;
+    top: 30px;
+}
+
+nav {
+    width: 180px;
+    position: absolute;
+    right: 0;
+    top: 160px;
+}
+
+
+
+li.main-menu {
+    position: relative;
+}
+
+li.main-menu a b {
+    transform: skew(40deg);
+    display: block;
+}
+
+li.main-menu a {
+    display: block;
+    color: #ff0000;
+    background: #000000;
+    text-align: center;
+    padding: 10px;
+}
+
+li.main-menu.on:hover .sub-menu {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+li.main-menu:hover>a
+{
+    background: #8b0000;
+    color: #fff;
+}
+
+ul.sub-menu {
+    background: #ec4242;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 180px;
+    width: 100%;
+    transform: translateX(-600px);
+    opacity: 0;
+    transition: .5s;
+    z-index: -1;
+}
+
+ul.sub-menu a {
+    padding: 10px;
+    text-align: center;
+}
+
+ul.sub-menu li {
+    border-bottom: 1px sorgb(143, 143, 143)#3b3b3b;
+}
+
+ul.sub-menu li:hover a{
+    background: #eeeeee;
+    color: #000000;
+}
+
+
+
+.icon {
+    position: absolute;
+    right: 220px;
+    bottom: 160px;
+    z-index: 10;
+    width: 95%;
+    transform: skew(40deg);
+}
+
+.icon img {
+    width: 60%;
+    animation: dance_jump 3s ease-out infinite;
+    transform-origin: center bottom;
+}
+
+.brand {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: .35s;
+    left: 100%;
+}
+
+
+
+.brand img {
+    display: block;
+    height: 100px;
+    transform: skew(40deg);
+    padding: 10px;
+}
+
+
+
+
+@keyframes dance_jump {
+    0% {
+        transform: none;
+    }
+
+    15% {
+        transform: rotate(-10deg);
+    }
+
+    30% {
+        transform: rotate(10deg);
+    }
+
+    45% {
+        transform: rotate(-10deg);
+    }
+
+    60% {
+        transform: translate3d(0, -10%, 0);
+    }
+
+    75% {
+        transform: translate3d(0, 10%, 0);
+    }
+
+    85% {
+        transform: translate3d(0, -30%, 0);
+    }
+
+    100% {
+        transform: none;
+    }
+}
+
+
+aside {
+    width: 600px;
+    position: fixed;
+    height: 100vh;
+    right: -600px;
+    top: 0;
+    background: rgb(107, 107, 107);
+    background: linear-gradient(0deg, rgba(107, 107, 107, 0.4430147058823529) 0%, rgba(255, 255, 255, 1) 100%);
+    transform: skew(-40deg);
+    transition: .35s;
+}
+
+aside .arrow {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 42px;
+    color: #fff;
+    transform: skew(40deg);
+    width: 180px;
+    height: 82px;
+}
+
+.arrow i.fa-solid {
+    position: absolute;
+    animation: arrow-ani 1.5s linear infinite;
+}
+
+.arrow i.fa-solid:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.arrow i.fa-solid:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.arrow i.fa-solid:nth-child(3) {
+    animation-delay: 1s;
+}
+
+@keyframes arrow-ani {
+    0% {
+        left: 0;
+        opacity: 0;
+        transform: scale(.8);
+
+    }
+
+    100% {
+        left: 90%;
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+/* aside hover aside 자체 크기 커져라 */
+/* aside hover symbol 보이지 않게 o */
+/* aside hover arrow보이지 않게 o*/
+/* aside hover aside 브랜드 위치 제자리 */
+/* aside hover 각각의  브랜드 위치 제자리 */
+
+
+aside:hover .icon {
+    transform: translateX(800px);
+    transition: .5s;
+}
+
+aside:hover .arrow {
+    transform: translateY(300px);
+    transition: .5s;
+}
+.brand ul li {
+    width: 100%;
+    overflow: hidden;
+    display: block;
+    background: #000;
+    transform: translateX(600px);
+    border-bottom: 1px solid #a1a1a1;
+    transition: 1s;
+}
+aside:hover .brand ul li{
+    transform: translateX(0);
+}
+
+.brand li:nth-child(1) {
+    transition-delay:0.6s;
+}
+
+.brand ul li:nth-child(2) {
+    transition-delay: 0.3s;
+}
+
+.brnad ul li:nth-child(3) {
+    transition-delay: 0s;
+}
+
+.brand ul{position: absolute;
+
+    bottom: 30px;
+    left: 3%;
+
+}
+
+aside:hover{right: -400px;}
+
+aside:hover .brand{background: rgba(0, 0, 0, .5);
+
+left: 10%;}    
+
+
+
+
